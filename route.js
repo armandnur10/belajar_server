@@ -11,12 +11,20 @@ const server = http.createServer((req, res) => {
 
     //routing
     if (url === "/") {
-        dataResponse == {
+        dataResponse = {
             data: "Ini adalah halaman Homepage"
+        }
+    } else if (url === '/login') {
+        dataResponse = {
+            data: "Ini adalah halaman Login"
+        }
+    } else{
+        dataResponse = {
+            data: "404 Not Found"
         }
     }
 
-    return.res.end(JSON.stringify(dataResponse))
+    return res.end(JSON.stringify(dataResponse))
 })
 
-server.listen(3000)
+server.listen(5000)
